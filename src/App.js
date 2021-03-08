@@ -1,10 +1,11 @@
 import Profile from './components/SocialProfile/Profile';
-import user from './components/SocialProfile/user.json';
-import Statistics from './components/Statistics/Statistics';
-import statisticalData from './components/Statistics/statistical-data.json';
-import FriendsList from './components/FriendsList/FriendsList';
-import friends from './components/FriendsList/friends.json';
+import Statistics from './components/Statistic/Statistics/Statistics';
+import FriendsList from './components/Friends/FriendsList/FriendsList';
 import TransactionHistory from './components/TransactionHistory/TransactionHistory';
+
+import user from './components/SocialProfile/user.json';
+import statisticalData from './components/Statistic/Statistics/statistical-data.json';
+import friends from './components/Friends/FriendsList/friends.json';
 import transactions from './components/TransactionHistory/transactions.json';
 
 const App = () => (
@@ -15,7 +16,7 @@ const App = () => (
       location={user.location}
       avatar={user.avatar}
       stats={user.stats}
-        />
+    />
     <Statistics title="Upload stats" stats={statisticalData} />
     <FriendsList friends={friends} />
     <TransactionHistory items={transactions} />

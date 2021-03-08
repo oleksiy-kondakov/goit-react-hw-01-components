@@ -3,7 +3,7 @@ import styles from './Profile.module.css';
 import defaultUserAvatar from './defaultUserPic.svg';
 
 const Profile = ({ name, tag, location, avatar, stats }) => (
-  <div className={styles.profile}>
+    <div className={styles.profile}>
     <div className={styles.description}>
       <img className={styles.avatar} src={avatar} alt="Аватар" />
       <p className={styles.name}>{name}</p>
@@ -25,8 +25,10 @@ const Profile = ({ name, tag, location, avatar, stats }) => (
         <span className={styles.quantity}>{stats.likes}</span>
       </li>
     </ul>
-  </div>
-);
+        </div>
+        
+  )  
+  
 
 Profile.defaultProps = {
   avatar: defaultUserAvatar,

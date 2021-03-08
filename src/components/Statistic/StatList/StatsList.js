@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import styles from './StatList.module.css';
-import Stat from '../Stat/Stat';
 
 const generateItemColor = (min, max) => {
   const itemColor = `rgb(
@@ -12,7 +11,7 @@ const generateItemColor = (min, max) => {
   return itemColor;
 };
 
-const StatsList = ({ stats }) => (
+const StatsList = ({ stats, label, percentage  }) => (
   <ul className={styles.statList}>
     {stats.map(({ id, label, percentage }) => (
       <li
@@ -20,7 +19,8 @@ const StatsList = ({ stats }) => (
         style={{ backgroundColor: generateItemColor(0, 255) }}
         key={id}
       >
-        <Stat label={label} percentage={percentage} />
+        <span className={styles.label}>{label}</span>
+    <span className={styles.percentage}>{percentage}%</span>
       </li>
     ))}
   </ul>
@@ -32,6 +32,8 @@ StatsList.propTypes = {
       id: PropTypes.string.isRequired,
     }),
   ).isRequired,
+  label: PropTypes.string.isRequired,
+  percentage: PropTypes.number.isRequired,
 };
 
 export default StatsList;
